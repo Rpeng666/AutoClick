@@ -26,7 +26,7 @@ pip install pyautogui schedule
 
 1. 运行脚本：
    ```bash
-   python auto_click_tool.py
+   python main.py
    ```
 
 2. 按照交互菜单操作：

@@ -8,6 +8,7 @@ class AutoClicker:
     def __init__(self):
         self.sequence = []
         self.is_recording = False
+        self.record_file_path = "./record_files/"
 
     def sample_point(self):
         """Get the current mouse position."""
@@ -33,13 +34,13 @@ class AutoClicker:
 
     def save_sequence(self, filename):
         """Save the recorded sequence to a file."""
-        with open(filename, 'w') as file:
+        with open(self.record_file_path + filename, 'w') as file:
             json.dump(self.sequence, file)
         print(f"Sequence saved to {filename}")
 
     def load_sequence(self, filename):
         """Load a click sequence from a file."""
-        with open(filename, 'r') as file:
+        with open(self.record_file_path + filename, 'r') as file:
             self.sequence = json.load(file)
         print(f"Sequence loaded from {filename}")
 
